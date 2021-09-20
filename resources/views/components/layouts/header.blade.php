@@ -1,16 +1,16 @@
 <header class="border-b border-gray-800">
-    <nav class="container flex items-center justify-between px-4 py-6 mx-auto">
+    <nav class="container flex flex-col items-center justify-between px-4 py-6 mx-auto lg:flex-row">
         <div class="flex items-center">
             <a href="/">
                 <img src="{{ asset('img/laracasts-logo.svg') }}" alt="laracasts" class="flex-none w-32">
             </a>
-            <ul class="flex ml-16 space-x-8">
+            <ul class="flex mt-6 ml-0 space-x-8 lg:ml-16 lg:mt-0">
                 <li><a href="#" class="hover:text-gray-400">Games</a></li>
                 <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
                 <li><a href="#" class="hover:text-gray-400">Coming Soon</a></li>
             </ul>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center mt-6 lg:mt-0">
             <div class="relative">
                 <input type="text" class="w-64 px-3 py-1 pl-8 text-sm bg-gray-800 rounded-full focus:outline-none focus:shadow-outline" placeholder="Search..."/>
                 <div class="absolute top-0 flex items-center h-full ml-2">

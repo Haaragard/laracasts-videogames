@@ -2,8 +2,8 @@
     <div class="container px-4 mx-auto">
         <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Popular Games') }}</h2>
 
-        <div class="grid grid-cols-6 gap-12 pb-16 text-sm border-b border-gray-800">
-            <div class="mt-8 game">
+        <div class="grid grid-cols-1 gap-12 pb-16 text-sm border-b border-gray-800 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6">
+            <div class="flex flex-col items-center mt-8">
                 <div class="relative inline-block">
                     <a href="#">
                         <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
@@ -19,8 +19,8 @@
             </div>
         </div> <!-- end popular-games -->
 
-        <div class="flex my-10">
-            <div class="w-3/4 mr-32">
+        <div class="flex flex-col my-10 lg:flex-row">
+            <div class="w-full mr-0 lg:w-3/4 lg:mr-32">
                 <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Recently Reviewed') }}</h2>
 
                 <div class="mt-8 space-y-12">
@@ -38,7 +38,7 @@
                                 Final Fantasy 7 Remake
                             </a>
                             <div class="mt-1 text-gray-400">Playstation 4</div>
-                            <p class="mt-6 text-gray-400">
+                            <p class="hidden mt-6 text-gray-400 lg:block">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur perferendis, aspernatur impedit error necessitatibus earum alias nesciunt nihil harum inventore laboriosam accusamus vitae obcaecati odit voluptatum vel. Quisquam, dolores ducimus.
                             </p>
                         </div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="w-1/4">
+            <div class="mt-12 lg:w-1/4 lg:mt-0">
                 <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Most Anticipated') }}</h2>
 
                 <div class="mt-8 space-y-10">
