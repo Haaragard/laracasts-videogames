@@ -1,11 +1,11 @@
 <x-layouts.app>
     <div class="container px-4 mx-auto">
-        <div class="flex pb-12 border-b border-gray-800">
+        <div class="flex flex-col items-center pb-12 border-b border-gray-800 lg:flex-row">
             <div class="flex-none">
                 <img src="{{ asset('img/ff7.jpg') }}" alt="cover">
             </div>
-            <div class="ml-12 mr-64">
-                <h2 class="text-4xl font-semibold">Final Fantasy VII Remake</h2>
+            <div class="mt-5 text-center lg:ml-12 xl:mr-64 lg:mt-0 lg:text-left">
+                <h2 class="text-4xl font-semibold leading-tight">Final Fantasy VII Remake</h2>
                 <div class="text-gray-400">
                     <span>Adventure, RPG</span>
                     &middot;
@@ -14,7 +14,7 @@
                     <span>Playstation 4</span>
                 </div>
 
-                <div class="flex flex-wrap items-center mt-8 space-x-12">
+                <div class="flex flex-col items-center justify-center mt-8 lg:flex-row lg:justify-start">
                     <div class="flex space-x-12">
                         <div class="flex items-center">
                             <div class="w-16 h-16 bg-gray-800 rounded-full">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center mt-5 space-x-4 lg:ml-12 lg:mt-0">
                         <div class="flex items-center justify-center w-8 h-8 bg-gray-800 rounded-full">
                             <a href="#" class="hover:text-gray-400">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 16 17" fill="none"><path d="M8 .266C3.582.266 0 3.952 0 8.5s3.582 8.234 8 8.234 8-3.686 8-8.234S12.418.266 8 .266zm2.655 11.873l-.365.375a.8.8 0 00-.2.355c-.048.188-.087.378-.153.56l-.561 1.556c-.444.1-.903.156-1.376.156v-.91c.055-.418-.246-1.203-.73-1.701-.194-.2-.302-.47-.302-.752v-1.062c0-.387-.203-.742-.531-.93a52.733 52.733 0 00-1.575-.866 4.648 4.648 0 01-1.02-.722l-.027-.024a3.781 3.781 0 01-.582-.689c-.303-.457-.796-1.209-1.116-1.698a6.581 6.581 0 013.33-3.383l.774.399c.343.177.747-.08.747-.475v-.375c.257-.043.52-.07.787-.08l.912.939a.542.542 0 010 .751l-.15.156-.334.343c-.101.104-.101.272 0 .376l.15.155c.102.104.102.272 0 .376l-.257.265a.255.255 0 01-.183.078h-.29a.254.254 0 00-.18.076l-.32.32a.269.269 0 00-.05.31l.502 1.035c.086.176-.039.384-.23.384h-.182a.253.253 0 01-.17-.065l-.299-.268a.51.51 0 00-.501-.102l-1.006.345a.386.386 0 00-.19.144.405.405 0 00.14.587l.357.184c.304.156.639.238.978.238.34 0 .729.906 1.032 1.062h2.153c.274 0 .537.112.73.311l.442.455c.184.19.288.447.288.716a1.584 1.584 0 01-.442 1.095zm2.797-3.033a.775.775 0 01-.457-.331l-.58-.896a.812.812 0 010-.883l.632-.976a.78.78 0 01.298-.27l.419-.216c.436.894.688 1.9.688 2.966 0 .288-.024.57-.06.848l-.94-.242z" /></svg>
@@ -61,7 +61,7 @@
 
                 <p class="mt-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi adipisci optio distinctio quae dolorum reiciendis a mollitia fuga qui ducimus rerum corporis assumenda porro, voluptates, ad nostrum quas consequuntur delectus.</p>
 
-                <div class="mt-12">
+                <div class="flex justify-center mt-12 lg:justify-start">
                     <button class="flex p-4 font-semibold text-white transition duration-150 ease-in-out bg-blue-500 rounded hover:bg-blue-600">
                         <svg class="w-6 fill-current" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
                         <span class="ml-2">{{ __('Play Trailer') }}</span>
@@ -73,7 +73,27 @@
         <div class="pb-12 mt-8 border-b border-gray-800">
             <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Images') }}</h2>
 
-            <div class="grid grid-cols-3 gap-12 mt-8">
+            <div class="grid grid-cols-1 gap-12 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('img/ff7.jpg') }}" alt="screenshot" class="transition duration-150 ease-in-out hover:opacity-75">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('img/ff7.jpg') }}" alt="screenshot" class="transition duration-150 ease-in-out hover:opacity-75">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('img/ff7.jpg') }}" alt="screenshot" class="transition duration-150 ease-in-out hover:opacity-75">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="{{ asset('img/ff7.jpg') }}" alt="screenshot" class="transition duration-150 ease-in-out hover:opacity-75">
+                    </a>
+                </div>
                 <div>
                     <a href="#">
                         <img src="{{ asset('img/ff7.jpg') }}" alt="screenshot" class="transition duration-150 ease-in-out hover:opacity-75">
@@ -86,7 +106,35 @@
             <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Similar games') }}</h2>
 
             <div class="grid grid-cols-1 gap-12 text-sm md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6">
-                <div class="flex flex-col items-center mt-8">
+                <div class="mt-8">
+                    <div class="relative inline-block">
+                        <a href="#">
+                            <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
+                        </a>
+                        <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right:-20px; bottom:-20px;">
+                            <div class="flex items-center justify-center w-full h-full text-xs font-semibold">80%</div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-8 text-base font-semibold leading-tight hover:text-gray-400">
+                        Final Fantasy 7 Remake
+                    </a>
+                    <div class="mt-1 text-gray-400">Playstation 4</div>
+                </div>
+                <div class="mt-8">
+                    <div class="relative inline-block">
+                        <a href="#">
+                            <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
+                        </a>
+                        <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right:-20px; bottom:-20px;">
+                            <div class="flex items-center justify-center w-full h-full text-xs font-semibold">80%</div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-8 text-base font-semibold leading-tight hover:text-gray-400">
+                        Final Fantasy 7 Remake
+                    </a>
+                    <div class="mt-1 text-gray-400">Playstation 4</div>
+                </div>
+                <div class="mt-8">
                     <div class="relative inline-block">
                         <a href="#">
                             <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">

@@ -1,6 +1,6 @@
 <header class="border-b border-gray-800">
     <nav class="container flex flex-col items-center justify-between px-4 py-6 mx-auto lg:flex-row">
-        <div class="flex items-center">
+        <div class="flex flex-col items-center lg:flex-row">
             <a href="/">
                 <img src="{{ asset('img/laracasts-logo.svg') }}" alt="laracasts" class="flex-none w-32">
             </a>
