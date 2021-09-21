@@ -17,7 +17,7 @@
                 </a>
                 <div class="mt-1 text-gray-400">Playstation 4</div>
             </div>
-        </div> <!-- end popular-games -->
+        </div>
 
         <div class="flex flex-col my-10 lg:flex-row">
             <div class="w-full mr-0 lg:w-3/4 lg:mr-32">
@@ -62,5 +62,5 @@
                 </div>
             </div>
         </div>
-    </div> <!-- end container -->
+    </div>
 </x-layouts.app>
