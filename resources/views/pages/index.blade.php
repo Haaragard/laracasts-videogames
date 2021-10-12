@@ -3,20 +3,31 @@
         <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Popular Games') }}</h2>
 
         <div class="grid grid-cols-1 gap-12 pb-16 text-sm border-b border-gray-800 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6">
+
+            @foreach ($popularGames as $game)
             <div class="flex flex-col items-center mt-8">
                 <div class="relative inline-block">
                     <a href="#">
-                        <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
+                        <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
                     </a>
                     <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right:-20px; bottom:-20px;">
                         <div class="flex items-center justify-center w-full h-full text-xs font-semibold">80%</div>
                     </div>
                 </div>
                 <a href="#" class="block mt-8 text-base font-semibold leading-tight hover:text-gray-400">
-                    Final Fantasy 7 Remake
+                    {{ $game['name'] }}
                 </a>
-                <div class="mt-1 text-gray-400">Playstation 4</div>
+                <div class="mt-1 text-gray-400">
+                    @foreach ($game['platforms'] as $platform)
+                    @if (array_key_exists('abbreviation', $platform))
+                        {{ $platform['abbreviation'] }}
+                    @else
+                        {{ $platform['name'] }}
+                    @endif
+                    @endforeach
+                </div>
             </div>
+            @endforeach
         </div>
 
         <div class="flex flex-col my-10 lg:flex-row">
