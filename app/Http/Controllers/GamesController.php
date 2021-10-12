@@ -28,7 +28,23 @@ class GamesController extends Controller
         ->limit(12)
         ->get();
 
-        return view('pages.index', compact('popularGames'));
+        $recentlyReviewed = Game::select([
+            'name',
+            'first_release_date',
+            'rating',
+            'aggregated_rating',
+            'summary'
+        ])
+        ->with(['cover' => ['url']])
+        ->with(['platforms' => ['name', 'abbreviation']])
+        ->whereDate('first_release_date', '>=', now()->subMonths(3)->timestamp)
+        ->whereDate('first_release_date', '<', now()->timestamp)
+        ->where('rating_count', '>', 5)
+        ->orderBy('aggregated_rating')
+        ->limit(3)
+        ->get();
+
+        return view('pages.index', compact('popularGames', 'recentlyReviewed'));
     }
 
     /**

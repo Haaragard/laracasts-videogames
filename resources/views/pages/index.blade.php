@@ -10,20 +10,20 @@
                     <a href="#">
                         <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="game cover" class="transition duration-150 ease-in-out hover:opacity-75">
                     </a>
-                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right:-20px; bottom:-20px;">
-                        <div class="flex items-center justify-center w-full h-full text-xs font-semibold">80%</div>
-                    </div>
+                    @isset($game['rating'])
+                        <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right:-20px; bottom:-20px;">
+                            <div class="flex items-center justify-center w-full h-full text-xs font-semibold">{{ round($game['rating'], 2) }}%</div>
+                        </div>
+                    @endisset
                 </div>
                 <a href="#" class="block mt-8 text-base font-semibold leading-tight hover:text-gray-400">
                     {{ $game['name'] }}
                 </a>
                 <div class="mt-1 text-gray-400">
                     @foreach ($game['platforms'] as $platform)
-                    @if (array_key_exists('abbreviation', $platform))
-                        {{ $platform['abbreviation'] }}
-                    @else
-                        {{ $platform['name'] }}
-                    @endif
+                        @if (array_key_exists('abbreviation', $platform))
+                            {{ $platform['abbreviation'] . ((!$loop->last) ? ',' : '') }}
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -35,25 +35,35 @@
                 <h2 class="font-semibold tracking-wide text-blue-500 uppercase">{{ __('Recently Reviewed') }}</h2>
 
                 <div class="mt-8 space-y-12">
-                    <div class="flex p-6 bg-gray-800 rounded-lg shadow-md">
-                        <div class="relative flex-none">
-                            <a href="#">
-                                <img src="{{ asset('img/ff7.jpg') }}" alt="game cover" class="w-48 transition duration-150 ease-in-out hover:opacity-75">
-                            </a>
-                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-900 rounded-full" style="right:-20px; bottom:-20px;">
-                                <div class="flex items-center justify-center w-full h-full text-xs font-semibold">80%</div>
+                    @foreach ($recentlyReviewed as $game)
+                        <div class="flex p-6 bg-gray-800 rounded-lg shadow-md">
+                            <div class="relative flex-none">
+                                <a href="#">
+                                    <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="game cover" class="w-48 transition duration-150 ease-in-out hover:opacity-75">
+                                </a>
+                                @isset($game['rating'])
+                                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-900 rounded-full" style="right:-20px; bottom:-20px;">
+                                        <div class="flex items-center justify-center w-full h-full text-xs font-semibold">{{ round($game['rating'], 2) }}%</div>
+                                    </div>
+                                @endisset
+                            </div>
+                            <div class="ml-12">
+                                <a href="#" class="block mt-4 text-lg font-semibold leading-tight hover:text-gray-400">
+                                    {{ $game['name'] }}
+                                </a>
+                                <div class="mt-1 text-gray-400">
+                                    @foreach ($game['platforms'] as $platform)
+                                        @if (array_key_exists('abbreviation', $platform))
+                                            {{ $platform['abbreviation'] . ((!$loop->last) ? ',' : '') }}
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <p class="hidden mt-6 text-gray-400 lg:block">
+                                    {{ $game['summary'] }}
+                                </p>
                             </div>
                         </div>
-                        <div class="ml-12">
-                            <a href="#" class="block mt-4 text-lg font-semibold leading-tight hover:text-gray-400">
-                                Final Fantasy 7 Remake
-                            </a>
-                            <div class="mt-1 text-gray-400">Playstation 4</div>
-                            <p class="hidden mt-6 text-gray-400 lg:block">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur perferendis, aspernatur impedit error necessitatibus earum alias nesciunt nihil harum inventore laboriosam accusamus vitae obcaecati odit voluptatum vel. Quisquam, dolores ducimus.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
